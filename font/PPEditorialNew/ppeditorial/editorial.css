@@ -1,0 +1,52 @@
+/* Regular */
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("../PPEditorialNew_WOFF2/PPEditorialNew-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Italic */
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("../PPEditorialNew_WOFF2/PPEditorialNew-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Ultrabold */
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("../PPEditorialNew_WOFF2/PPEditorialNew-Ultrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Ultrabold Italic */
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("../PPEditorialNew_WOFF2/PPEditorialNew-UltraboldItalic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Ultralight */
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("../PPEditorialNew_WOFF2/PPEditorialNew-Ultralight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Ultralight Italic */
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("../PPEditorialNew_WOFF2/PPEditorialNew-UltralightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
