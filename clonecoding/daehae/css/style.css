@@ -1,0 +1,353 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+body {font-family: "Noto Sans KR", sans-serif; position: relative;}
+@font-face {
+    font-family: 'dotum gothic';
+    src:url(font/dotum.ttf) format('truetype');
+}
+
+/* 공통요소 */
+section {padding-top: 100px; height: 70vh;}
+.en {font-family: "Cormorant Garamond", serif;}
+h2 {font-size: 110px; font-weight: 400; }
+h3 {font-size: 30px;}
+.inner {width: 90%; margin: 0 auto;}
+section .btn p {font-family: "Cormorant Garamond", serif; font-weight: bold;}
+section .btn {width: 130px; display: flex; justify-content: space-between; align-items: center; position: absolute; z-index: 2; top: 70%;}
+section .btn span:before {content: ''; width: 46px; height: 46px; background: #221E1F; position: absolute; z-index: -1; right: 0; top: 0; border-radius: 28px; transition: all 0.7s;}
+section .btn:hover span:before {width: 110%; height: 100%;}
+section .btn:hover {color: #fff;}
+section .btn span {width: 46px; height: 46px; background: url(../img/btnMore_arr.png);}
+
+
+/* header */
+header { position: fixed; left: 0; top: 0;  width: 100%; line-height: 100px; background: #fff; z-index: 5;}
+header .inner {width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; text-align: center;}
+header .inner p.img img {width: 100%;}
+header .inner ul {display: flex; justify-content: space-between; width: 40%; font-size: 20px;}
+header .inner ul li a {display: block;}
+header .inner .menu {width: 13%; display: flex; justify-content: space-between; align-items: center; text-align: center; position: relative;}
+header .inner .menu .left {display: flex; justify-content: space-between; text-align: center; width: 60%; position: relative; z-index: 2;}
+header .inner .menu .left a {display: block;}
+header .inner .menu .left img {width: 40px;}
+header .inner .menu .left .leftBox p:before {content: ''; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #000; left: 45%; top: 50%; transform: translateY(-50%); transition: all 0.5s;}
+header .inner .menu .left .leftBox p:hover:before {background: green;}
+header .inner .menu .right {position: absolute; right: 0; top: 55%; transform: translateY(-50%); display: block; font-size: 20px; font-weight: bold;}
+header .inner .menu .right .bar {width: 45px; height: 3px; background: #000;; margin-bottom: 7px; box-sizing: border-box;}
+
+/* visual */
+.visual {padding-top: 200px; margin-bottom: 100vh;}
+.visual h2 {margin-bottom:  60px; box-sizing: border-box; line-height: 1.1;}
+.visual .bg {width: 100%; height: 80vh; overflow: hidden; object-fit: cover;}
+.visual .bg video {width: 100%;}
+
+/* overview */
+.overview {padding-bottom: 150px; box-sizing: border-box; position: relative;}
+.overview .inner {width: 90%; margin: 0 auto; display: flex; justify-content: space-between;}
+.overview .inner .left h2{margin-bottom: 50px;}
+.overview .inner .left > p {width: 60%; line-height: 1.6; color: #666; letter-spacing: 1; margin-bottom: 50px;}
+.overview .btn {width: 130px; display: flex; justify-content: space-between; align-items: center; position: absolute; z-index: 2; top: 70%;}
+.overview .btn span:before {content: ''; width: 46px; height: 46px; background: #221E1F; position: absolute; z-index: -1; right: 0; top: 0; border-radius: 28px; transition: all 0.7s;}
+.overview .btn:hover span:before {width: 110%; height: 100%;}
+.overview .btn:hover {color: #fff;}
+.overview .btn span {width: 46px; height: 46px; background: url(../img/btnMore_arr.png);}
+
+.overview .inner .right.motion {width: 70%;}
+.overview .inner .right.motion  ul {display: flex; justify-content: space-between;}
+.overview .inner .right.motion  ul li {position: relative; z-index: -1;}
+.overview .inner .right.motion  ul li:after {content: ''; width: 0; height: 100%; background: #fff; position: absolute; left: 0; top: 0; z-index: 2;}
+
+
+/* project_01 */
+.project_01 {height: auto;}
+.project_01 .inner {height: 100%;}
+.inner h3 {margin-bottom: 20px;}
+.inner .head {display: flex; justify-content: space-between; margin-bottom: 50px;}
+.inner .head p {font-size: 25px;}
+.inner .head .nav {display: flex; justify-content: space-between; align-items: center; width: 20%; padding-left: 15px; box-sizing: border-box; font-size: 16px; letter-spacing: -1px; position: relative;}
+.inner .head .nav:before {content: ''; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #000; left: 0; top: 50%; transform: translateY(-50%);}
+
+.inner .imgBox {display: flex; justify-content: space-between;}
+.inner .imgBox li a.motion {display: block; margin-bottom: 10px;}
+.inner .imgBox li a.motion .txtBox {padding-top: 18px;  font-weight: bold;}
+.inner .imgBox li a.motion p:nth-child(1) {font-size: 16px; margin-bottom: 5px;}
+.inner .imgBox li a.motion p:nth-child(2) {font-size: 20px;}
+
+
+/* project_02 */
+
+.project_02 {height: auto;}
+
+/* project_03 */
+
+.project_03 {height: 130vh; margin-bottom: 50px;}
+.project_03 .inner {height: 100%;}
+.project_03 .inner a {display: block;}
+.project_03 .inner a > img {width: 100%;}
+.project_03 .inner a .txtBox {padding-top: 18px;  font-weight: bold;}
+.project_03 .inner a p:nth-child(1) {font-size: 16px; margin-bottom: 5px;}
+.project_03 .inner a p:nth-child(2) {font-size: 20px;}
+.project_03 .inner .btn {display: flex; justify-content: space-between; align-items: center; width: 140px; position: absolute; right: 90px; top: 70.5%;}
+
+
+/* press */
+.press .inner .head {margin-bottom: 80px;}
+.press .inner .head a {display: flex; justify-content: space-between; align-items: center;}
+.press .inner ul {display: flex; justify-content: space-between; border-bottom: 2px solid #555; padding: 70px 0;}
+.press .inner ul li a p:nth-child(1) {font-size: 23px; margin-bottom: 10px; font-weight: bold;}
+.press .inner ul li a p:nth-child(2) {margin-bottom: 18px; color: #555;}
+.press .inner ul li a p:nth-child(3) {color: #555;}
+.press .inner {position: relative;}
+.press .inner .btn {display: flex; justify-content: space-between; align-items: center; width: 130px; position: absolute; right: 0; top: 50px; font-size: 18px;}
+
+
+/* banner */
+.banner {width: 100%; height: 400px; position: relative; padding-top: 100px; overflow: hidden;}
+.banner span {width: 100%; height: 100%; font-size: 240px; position: absolute; white-space: nowrap; font-weight: 500; text-transform: uppercase;}
+
+@keyframes marquee {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+.banner span {animation:marquee 25s linear infinite}
+
+
+/* recruit */
+.recruit {height: 84vh; overflow: hidden; position: relative;}
+.recruit .video {position: absolute; z-index: 1; transform: translateY(-21%);}
+.recruit .inner {width: 100%; position: absolute; z-index: 2; top: 50%;}
+.recruit .innerTxt {width: 90%; margin: 0 auto; color: #fff; transform: translateY(-50%);}
+.recruit .innerTxt > p {font-size: 45px; font-weight: bold; margin-bottom: 20px;}
+.recruit .inner .btn {display: flex; justify-content: space-between; align-items: center; width: 160px; position: absolute; left: 100px; top: 100px; font-size: 18px; color: #fff; font-weight: bold;}
+.recruit .top {position: fixed; bottom: 20px; right: 50px;}
+
+
+/* footer */
+footer {padding: 40px 0;}
+footer .inner {padding: 40px 0; display: flex; justify-content: space-between; border-top: 1px solid #000;}
+footer .inner .footerTxt {display: flex; justify-content: space-between; width: 1400px;}
+footer .inner .footerTxt ul {display: flex; justify-content: space-between; width: 37%;}
+footer .inner .footerTxt ul li p {margin-bottom: 10px;}
+footer .inner .footerTxt ul .left p {font-weight: 500;}
+footer .inner .footerTxt ul .left p:before {content: '';}
+
+footer .inner .footerTxt ul .right p {color: #555;}
+footer .inner .footerTxt p {color: #555;}
+
+
+
+@keyframes head {
+    0% {opacity: 0; transform: translateY(-50px);}
+    70% {opacity: 0; transform: translateY(-50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+header {animation-name: head; animation-duration: 3s;}
+
+@keyframes bg1{
+    0% {transform: translateY(-800px);}
+}
+.visual .bg {animation-name: bg1; animation-duration: 2s;}
+
+
+@keyframes slideUp {
+    0% {opacity: 0; transform: translateY(30px);}
+    30% {opacity: 0; transform: translateY(30px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp2 {
+    0% {opacity: 0; transform: translateY(50px);}
+    30% {opacity: 0; transform: translateY(50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+.inner .imgBox li a.motion {animation-name: slideUp2; animation-duration: 0.8s;}
+.project_03 .inner a.motion {animation-name: slideUp2; animation-duration: 0.8s;}
+
+.motion .char { display: inline-block; animation: slideUp 3s cubic-bezier(.10, 0, .10, 1) both;
+animation-delay: calc(60ms * var(--char-index));}
+
+.overview .motion .char { display: inline-block; animation: slideUp 1s cubic-bezier(.10, 0, .10, 1) both;
+    animation-delay: calc(60ms * var(--char-index));}
+
+@keyframes slideRight {
+    0% {width: 80%;}
+    100% {width: 0%;}
+}
+.overview .inner .right ul li:after {animation-name: slideRight; animation-duration: 1.2s;}
+.overview .inner .right ul li:last-child:after {animation-name: slideRight; animation-duration: 1.4s;}
+
+@keyframes btn {
+    0% {width: 0; height: 100%;}
+    100% {width: 100%; height: 100%;}
+}
+.overview .inner .left .btn:hover span:before {animation-name: btn;}
+.project_03 .inner .btn p {animation-name: btn;}
+
+
+/* responsive */
+/* 1400px ~ 1025px */
+@media screen and (max-width:1400px){
+    section {padding-top: 50px;}
+    header .inner ul {opacity: 0;}
+    header .inner .menu {width: 21%;}
+    .visual {margin-bottom: 50vh;}
+    .visual h2 {font-size: 78px; letter-spacing: -2px;}
+    .visual .bg {height: 60vh; width: 100%;}
+    .visual .bg video {width: 100%; height: 100%; object-fit: cover;}
+    .overview .inner .left h2 {font-size: 77px;}
+    .overview .inner .left > p {width: 95%;}
+    .overview .inner .btn {top: 65%;}
+    .overview .inner .right.motion {width: 50%;}
+    .overview .inner .right.motion ul {width: 590px; height: 400px;}
+    .overview .inner .right.motion ul li {width: 287px; height: 100%; overflow: hidden;}
+    .overview .inner .right.motion ul li img {width: 100%; height: 100%;}
+    .project_01 .inner .head .nav {width: 30%;}
+    .project_01 .imgBox > li {width: 510px; height: 672px;}
+    .project_01 .imgBox > li:nth-child(2) {width: 520px; height: 520px;}
+    .project_01 .imgBox img {width: 100%; height: 100%;}
+    .project_02 {padding: 200px 0;}
+    .project_02 .inner .imgBox li:nth-child(2) a {width: 510px; height: 510px;}
+    .project_02 .inner .imgBox li:nth-child(2) a img {width: 100%; height: 100%;}
+    .project_03 {height: 100vh;}
+    .project_03 .inner .btn {width: 12%; right: 60px; top: 64%;}
+    .press .inner .head a {width: 12%;}
+    .press .inner ul {padding: 60px 0;}
+    .press .inner ul li:last-child {display: none;}
+    .banner {padding-top: 0; font-size: 200px; height: 340px;}
+    footer .inner {display: block; padding: 20px 0;}
+    footer .inner .img {margin-bottom: 20px;}
+    footer .inner .footerTxt {display: block; margin-bottom: 20px;}
+    footer .inner .footerTxt .left p {display: block; position: relative; padding-left: 10px;}
+    footer .inner .footerTxt .left p:before {content: ''; width: 3px; height: 3px; background: #000; border-radius: 50%;  position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+    footer .inner .footerTxt ul {margin-bottom: 20px;}
+}
+
+/* 1024px ~ 768px */
+@media screen and (max-width:1024px){
+    header {line-height: 50px;}
+    header .inner .menu {width: 30%;}
+    .visual .inner h2 {font-size: 54px; line-height: -1px;}
+    .overview .inner .left h2 {font-size: 6vw;}
+    .overview .inner .left > p {width: 95%;}
+    .overview .inner .right.motion {width: 50%;}
+    .overview .inner .right.motion ul {width: 390px;}
+    .overview .inner .right.motion ul li {width: 190px; height: 270px; overflow: hidden;}
+    .overview .inner .right.motion ul li img {width: 100%; height: 100%;}
+    .project_01 .inner .head p {width: 35%;}
+    .project_01 .inner .head .nav {width: 40%;}
+    .project_01 .imgBox > li {width: 381px; height: 503px;}
+    .project_01 .imgBox > li:nth-child(2) {width: 381px; height: 381px;}
+    .project_01 .imgBox img {width: 100%; height: 100%;}
+    .project_02 {padding: 200px 0;}
+    .project_02 .inner .imgBox li a {width: 381px; height: 381px;}
+    .project_02 .inner .imgBox li:nth-child(2) a {width: 381px; height: 381px;}
+    .project_02 .inner .imgBox li a img {width: 100%; height: 100%;}
+    .project_03 .inner {position: relative;}
+    .project_03 .inner .btn {position: absolute; width: 18%; right: 0; top: 60%;}
+    .press .inner .head a {width: 18%;}
+    .press .inner .head p {width: 33%;}
+    .press .inner ul {padding: 60px 0;}
+    .press .inner ul li:last-child, .press .inner ul li:nth-child(3)  {display: none;}
+    .recruit .innerTxt > p {width: 95%;}
+    .recruit .inner .btn {left: 42px; margin-top: 20px;}
+    .banner {font-size: 200px; margin-bottom: 50px;}
+    .banner span {animation:marquee 15s linear infinite}
+    footer {padding: 20px 0;}
+}
+
+/* 768px ~ 501px */
+@media screen and (max-width:768px){
+    header .inner .menu {width: 48%;}
+    header .inner .menu img {opacity: 0;}
+    header .inner .menu .left {width: 70%;}
+    header .inner .menu .right .bar {width: 30px;}
+    .overview {margin-bottom: 250px;}
+    .overview .inner {display: block;}
+    .overview .inner .left h2 {font-size: 10vw;}
+    .overview .inner .left > p {margin-bottom: 150px;}
+    .overview .inner .btn {margin-bottom: 50px; width: 140px; position: absolute; top: 55%;}
+    .overview .inner .left .btn p {padding-left: 0;}
+    .overview .inner .right.motion {width: 100%;}
+    .overview .inner .right.motion ul {width: 100%;}
+    .overview .inner .right.motion ul li {width: 49%; height: 370px; overflow: hidden;}
+    .overview .inner .right.motion ul li img {width: 100%; height: 100%;}
+    .project_01 .inner .head  {display: block;}
+    .project_01 .inner .head p {width: 50%; margin-bottom: 50px;}
+    .project_01 .inner .head .nav {width: 60%;}
+    .project_01 .inner .head .nav li:nth-child(2) {color: #666;}
+    .project_01 .inner .head .nav li:nth-child(3) {color: #666;}
+    .project_01 .imgBox {flex-wrap: wrap;}
+    .imgBox li {margin-bottom: 100px;}
+    .project_01 .imgBox li:nth-child(1) a {width: 534px; height: 333px;}
+    .project_01 .imgBox li:nth-child(2) a {width: 534px; height: 333px;}
+    .project_01 .imgBox img {width: 100%; height: 100%;}
+    .project_02 {padding: 0;}
+    .project_02 .imgBox {flex-wrap: wrap;}
+    .project_02 .inner .imgBox li a {width: 534px; height: 333px;}
+    .project_02 .inner .imgBox li:nth-child(2) a {width: 534px; height: 333px;}
+    .project_02 .inner .imgBox li a img {width: 100%; height: 100%;}
+    .project_03 {height: 60vh;}
+    .project_03 .inner .btn {position: absolute; width: 27%; right: 0; top: 70%;}
+    .press .inner .head a {display: none;}
+    .press .inner .head p {width: 100%;}
+    .press .inner .btn {display: none;}
+    .banner {height: 150px;}
+    .banner span {padding-top: 0; font-size: 80px; animation: marquee 5s linear infinite;}
+    .recruit .innerTxt > p {font-size: 27px; width: 85%;}
+    .recruit .inner .btn {left: 30px;}
+}
+
+
+/* 500px이하 */
+@media screen and (max-width:500px) {
+    header .inner p.img {width: 200px;}
+    header .inner ul {display: none;}
+    header .inner .menu {width: 50%;}
+    header .inner .menu .left .img {opacity: 0;}
+    header .inner .menu .left a {display: block;}
+    header .inner .menu .left .leftBox {width: 100%;}
+    header .inner .menu .left .leftBox p:before {left: 25%;}
+    header .inner .menu {width: 80%;}
+    header .inner .menu .left {width: 50%;}
+    header .inner .menu .right .bar {width: 30px;}
+    .visual .inner h2 {font-size: 40px;}
+    .overview .inner {display: block;}
+    .overview .inner .right.motion  {display: block;}
+    .overview .inner .left h2 {font-size: 5vh; margin-bottom: 20px;}
+    .overview .inner .menu .left .img {opacity: 0;}
+    .overview .inner .right.motion ul li {width: 170px; height: 240px;}
+    .project_01 {margin-bottom: 50px;}
+    .project_01 .inner .head p {width: 80%;}
+    .project_01 .inner .head .nav {width: 80%;}
+    .project_01 .imgBox li {margin-bottom: 50px;}
+    .project_01 .imgBox li a img {width: 350px; height: 350px;}
+    .project_02 .inner .imgBox li {margin-bottom: 100px;}
+    .project_02 .inner .imgBox li a img {width: 350px; height: 350px;}
+    .project_02 .inner .imgBox li:nth-child(2) a img {width: 350px; height: 350px;}
+    .project_03 .inner a > img {width: 350px; height: 350px; object-fit: cover;}
+    .project_03 .inner .btn {top: 80%; width: 40%;}
+    .press .inner .head p {width: 75%;}
+    .press .inner ul li:nth-child(2){display: none;}
+    .recruit {position: relative; height: 48vh;}
+    .recruit .innerTxt > p {width: 100%;}
+    .recruit .top {width: 35px; height: 35px;}
+    .recruit .top img {width: 100%}
+    .recruit .video {width: 390px; height: 500px;}
+    .recruit .video video {width: 100%; height: 100%; object-fit: cover; transform: scale(1.3);}
+    .recruit .inner {position: absolute; top: 40%; left: 0;}
+    footer .inner p {font-size: 14px;}
+    footer .inner .footerTxt ul {width: 30%;}
+
+}

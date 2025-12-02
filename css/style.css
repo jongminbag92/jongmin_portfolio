@@ -14,7 +14,7 @@ body {font-family: "Pretendard", sans-serif; font-size: 20px; letter-spacing: -0
 .wrap {position: relative; margin: 0 auto; background: #0D0D0D; color: #fff;}
 
 .section {margin-bottom: 150px;}
-.inner {padding: 0 110px; box-sizing: border-box; margin: 0 auto; overflow: hidden;}
+.inner {padding: 0 110px; box-sizing: border-box; margin: 0 auto;}
 .box {border-radius: 10px; overflow: hidden}
 
 
@@ -142,7 +142,7 @@ color: #fff; font-size: 20px; white-space: nowrap;}
     display: flex;
     gap: 40px;
     white-space: nowrap;
-    animation: skillMarquee 20s linear infinite;
+    animation: skillMarquee 30s linear infinite;
 }
 
 /* 아이템 박스 */
@@ -306,6 +306,53 @@ color: #fff; font-size: 20px; white-space: nowrap;}
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+
+
+/* 05. con3 */
+.clone-coding {padding-top: 150px;}
+.clone-coding .inner {display: flex; justify-content: space-between;}
+.clone-coding .textBox {width: 32%;}
+.clone-coding .textBox h2 {font-size: 80px; font-weight: normal;position: -webkit-sticky; position: sticky; top: 50%; transform: translateY(-50%); text-align: center; color: #F7EFAE;}
+.clone-coding .textBox h2 p {font-size: 20px; font-family: "Pretendard", sans-serif; font-weight: 500; font-style: normal; margin-top: 30px; color: #fff;}
+/*
+1. position: sticky : https://usagi-post.com/archives/1448 -> 부모요소 혹은 조상?요소?.. (wrap 이나 body)에 오버플로우가 없어야함
+*/
+.clone-coding .listBox {width: 60%; display: flex; justify-content: space-between; flex-wrap: wrap; perspective:900px; overflow: hidden}
+/* perspective속성(스크롤트리거 애니에서 사용 예정) : 3D 위치의 요소에 원근감을 제공하는데 사용 한다 -> perspective개체가 사용자로부터 얼마나 멀리 떨어져 있는지를 정의 */
+/* overflow: hidden -> 스크롤 트리거 걸면 가로스크롤 생겨서 가려준다 */
+.clone-coding .listBox li {width: 48%; cursor: pointer}
+.clone-coding .listBox li .img  {background: var(--sub-color); border-radius: 10px; text-align: center;}
+.clone-coding .listBox li .img img  {width: 100%; filter: brightness(80%); transition: all .2s;}
+.clone-coding .listBox li .img img:hover {filter: brightness(100%);}
+.clone-coding .listBox h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 50px;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+/* 오른쪽 버튼 묶음 */
+.clone-coding .listBox h4 span.b {
+    display: flex;
+    gap: 10px; /* 버튼 사이 간격 */
+}
+
+/* 각각의 버튼 스타일 */
+.clone-coding .listBox h4 span.b a {
+    padding: 10px 8px;
+    background: #ffffff;
+    color: #0D0D0D;
+    border-radius: 50px; /* pill shape */
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
 
 
 /* footer-intro */

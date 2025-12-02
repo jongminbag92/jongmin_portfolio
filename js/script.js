@@ -3,6 +3,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin, MotionPathPlugin, ScrollToPlugin)
 let workScrollTween = null;
 
 document.addEventListener("DOMContentLoaded", () => {
+  preventAnchorBounce();
   header_menu();
   mainTextBox();
   tag();
@@ -12,19 +13,32 @@ document.addEventListener("DOMContentLoaded", () => {
   footerMarquee();
   popup();
   topBtn();
+  clonCoding();
 });
 
 window.addEventListener('load', () => {
   attachImageCursor();
 });
 
+function preventAnchorBounce() {
+    $(document).on('click', 'a[href="#"]', function (e) {
+        e.preventDefault();
+    });
+}
+
 function header_menu() {
 let menuOpen = document.querySelector(".gnb .menuOpen");   
 let menuBox = document.querySelector(".gnb .menuBox");
+let menuLinks = document.querySelectorAll(".gnb .menuBox li a");
     
 menuOpen.addEventListener("click",() => { 
         menuBox.classList.toggle("on");
 })
+menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            menuBox.classList.remove("on");
+        });
+    });
 }
 
 function mainTextBox() {  
@@ -72,8 +86,11 @@ function infiniteMarquee() {
   const track = document.querySelector('.marquee-track');
   if (!track) return;
 
-  // 기존 내용 복제하여 2배로 만들기
-  track.innerHTML += track.innerHTML;
+  // 이미 복제된 상태면 또 복제되지 않도록 방지
+  if (!track.dataset.cloned) {
+    track.innerHTML += track.innerHTML;
+    track.dataset.cloned = "true";
+  }
 }
 
 function initWorkHorizontalScroll() {
@@ -150,6 +167,32 @@ function attachImageCursor() {
     box.addEventListener('mousedown', () => cursor.classList.add('is-down'));
     box.addEventListener('mouseup',   () => cursor.classList.remove('is-down'));
   });
+}
+
+function clonCoding() {
+  
+// [ 스크립트 7 - con3 의 listBox 카드 날라오는 스크롤트리거 애니메이션 ]   
+gsap.utils.toArray(".clone-coding .listBox li").forEach((selector, t) => { 
+    // create 참고 ->https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.create()
+    ScrollTrigger.create({
+        trigger: selector,
+        start: "start 100%",
+        onEnter: ()=>{ // onEnter - 스크롤 위치가 "시작"을 지나 앞으로 이동할 때 (시작 지점을 지나 스크롤 내릴때 진행되고 올릴땐 진행되지 않음)
+            gsap.set(selector, { // https://greensock.com/docs/v3/GSAP/gsap.set()
+                rotationX: "-65deg",
+                z: "-500px",
+                opacity: 0
+            }),
+            gsap.to(selector, {
+                rotationX: "0",
+                z: "0",
+                opacity: 1,
+                delay: t % 3 * .05
+            })
+        },
+        //markers: true,
+    })
+}); 
 }
 
 function footerMarquee() {
